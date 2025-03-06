@@ -21,25 +21,49 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function RowAndColumnSpacing() {
   return (
-    <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid >
-          <Item>
-            <Login />
-          </Item>
-        </Grid>
-        <Grid size={6}>
-          <Item>
-            <Texts subtitle={'Seleccione una fecha y hora'} />
-            <Calendar />
-          </Item>
-        </Grid>
-        <Grid size={1}>
-          <Item>
-            <ButtonTime/>
-          </Item>
-        </Grid>
-      </Grid>
-    </Box>
+    <Box 
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          width: 1000,
+          height: "100%",
+          padding: 2,
+          position: "sticky",
+          top: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Login />
+
+        <Texts subtitle={'Seleccione una fecha y hora'} />
+
+        <Calendar />
+
+      </Paper>
+      
+      <Paper
+        elevation={3}
+        sx={{
+          width: 200,
+          height: "100%", 
+          overflowY: "auto",
+          padding: 2,
+        }}
+      >
+        
+        <ButtonTime/>
+
+      </Paper>
+      </Box>
   );
 }
