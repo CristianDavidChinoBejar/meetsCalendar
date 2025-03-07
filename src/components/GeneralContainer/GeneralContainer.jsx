@@ -49,7 +49,7 @@ export default function RowAndColumnSpacing() {
         }}
       >
         {/* <Login /> */}
-        <button onClick={logout}>Cerrar sesión</button>
+        <Login />
         
         <Texts subtitle={'Seleccione una fecha y hora'} />
 
