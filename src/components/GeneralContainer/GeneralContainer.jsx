@@ -6,7 +6,9 @@ import Box from '@mui/material/Box';
 import ButtonTime from '../ButtonTime/ButtonTime'
 import Calendar from '../Calendar/Calendar'
 import {Texts} from '../Texts/Texts';
-import Login from '../Login/Login'
+import Login from '../Login/Login';
+import { useEffect } from "react";
+import { logout } from "../../../firebaseConfig";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -20,6 +22,9 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function RowAndColumnSpacing() {
+  useEffect(() => {
+    console.log("GeneralContainer se ha montado");
+  }, []);
   return (
     <Box 
       sx={{
@@ -43,8 +48,9 @@ export default function RowAndColumnSpacing() {
           justifyContent: "center",
         }}
       >
-        <Login />
-
+        {/* <Login /> */}
+        <button onClick={logout}>Cerrar sesión</button>
+        
         <Texts subtitle={'Seleccione una fecha y hora'} />
 
         <Calendar />
@@ -62,7 +68,7 @@ export default function RowAndColumnSpacing() {
       >
         
         <ButtonTime/>
-
+        
       </Paper>
       </Box>
   );
