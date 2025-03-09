@@ -10,8 +10,6 @@ const Login = () => {
       if (currentUser) {
         setUser(currentUser);
         await sendUserDataToBackend(currentUser); // Enviar datos al backend
-        console.log(currentUser, ' ga 0');
-        
       }
     });
   }, []);
@@ -35,7 +33,6 @@ const Login = () => {
         },
         body: JSON.stringify(userData),
       });
-      console.log(response, 'ga 2');
       
       const text = await response.text();
       console.log(text,' pato');
