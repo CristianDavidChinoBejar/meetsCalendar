@@ -1,10 +1,11 @@
 import { signInWithGoogle, auth } from "../../../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-
+import { Box, Button, CircularProgress, Paper, Typography } from "@mui/material";
+import { Google } from "@mui/icons-material";
 const Login = () => {
   const [user, setUser] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   // Detectar cambios de autenticación
   useEffect(() => {
     onAuthStateChanged(auth, async (currentUser) => {
@@ -16,7 +17,16 @@ const Login = () => {
       }
     });
   }, []);
-
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.error("Error al iniciar sesión", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   // Función para enviar los datos al backend
   const sendUserDataToBackend = async (user) => {
     const userData = {
@@ -46,6 +56,8 @@ const Login = () => {
     } catch (error) {
       console.error("Error al enviar los datos al backend:", error);
     }
+
+   
   };
 
   return (
@@ -58,7 +70,16 @@ const Login = () => {
           <button onClick={() => auth.signOut()}>Cerrar sesión</button>
         </div>
       ) : (
-        <button onClick={signInWithGoogle}>Iniciar sesión con Google</button>
+        <>
+            <Typography variant="h5" mb={2}>Iniciar sesión</Typography>
+            <Button 
+              variant="contained" startIcon={<Google />} 
+              fullWidth sx={{ backgroundColor: "#db4437", color: "white" }}
+              onClick={handleLogin} disabled={loading}
+            >
+              {loading ? <CircularProgress size={24} color="inherit" /> : "Iniciar con Google"}
+            </Button>
+          </>
       )}
     </div>
   );
