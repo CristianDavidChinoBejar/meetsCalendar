@@ -6,6 +6,7 @@ import Calendar from '../Calendar/Calendar'
 import {Texts} from '../Texts/Texts';
 import Login from '../Login/Login';
 import { useEffect } from "react";
+import ButtonSend from '../ButtonSend/ButtonSend';
 
 export default function RowAndColumnSpacing() {
   useEffect(() => {
@@ -41,6 +42,8 @@ export default function RowAndColumnSpacing() {
 
         <Calendar />
 
+        <ButtonSend />
+        
       </Paper>
       
       <Paper
