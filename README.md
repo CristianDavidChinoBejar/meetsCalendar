@@ -24,34 +24,45 @@ Linux:
 
 
 
----
+
 
 ## 🛠️ Getting Started
 
 ### Clone the repo:
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone 
+```
+```bash
+cd 
+```
+---
+## Requirements:
 
-Requirements:
-    Node.js (v16+ recommended) 🌱
+ - Node.js (v16+ recommended) 🌱
+---
+### For Linux users:
 
-For Linux users:
 - 1  Install Node & NPM:
-
+```
     sudo apt update
+```
+```
     sudo apt install npm
+```
 
 - 2 Install dependencies:
-        npm install
 
-      
+```
+npm install
+```      
 - 3 Run the app:
-      
-      npm run dev
-      
-- 4 dOpen in browser:
-      
-      http://localhost:5173/
+```
+npm run dev
+```
+- 4 Open in browser:
+```
+http://localhost:5173/
+```
+
 ---
 
