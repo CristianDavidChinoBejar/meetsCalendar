@@ -6,6 +6,9 @@ import Calendar from '../Calendar/Calendar'
 import {Texts} from '../Texts/Texts';
 import Login from '../Login/Login';
 import { useEffect } from "react";
+import Details from './DetailsMeet';
+import './GeneralContainer.css'
+
 
 export default function RowAndColumnSpacing() {
   useEffect(() => {
@@ -36,14 +39,18 @@ export default function RowAndColumnSpacing() {
       >
         {/* <Login /> */}
         <Login />
-        
-        <Texts subtitle={'Seleccione una fecha y hora'} />
-
+      <div className='container'>
+        <Details />
+        {/* <Texts subtitle={'Seleccione una fecha y hora'} /> */}
+        <div className='SeleccionFecha'>
+          <h3>Seleccione una fecha y hora</h3>
         <Calendar />
-
+        </div>
+        </div>
       </Paper>
       
       <Paper
+      
         elevation={3}
         sx={{
           width: 200,

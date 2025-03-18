@@ -1,3 +1,20 @@
-h1{
-    color: blue;
-}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los componentes */
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espacio entre ellos */
+  }
+  
+  .box {
+    width: 45%; /* O usa flex: 1 para que ocupen igual espacio */
+    padding: 20px;
+    background-color: lightblue;
+    text-align: center;
+    border: 2px solid blue;
+  }
+
+  .SeleccionFecha{
+    text-align: center;
+
+  }
