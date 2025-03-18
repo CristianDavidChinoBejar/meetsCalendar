@@ -5,7 +5,6 @@ import ButtonTime from '../ButtonTime/ButtonTime'
 import Calendar from '../Calendar/Calendar'
 import {Texts} from '../Texts/Texts';
 import Login from '../Login/Login';
-import { useEffect } from "react";
 import Details from './DetailsMeet';
 import './GeneralContainer.css'
 
@@ -18,9 +17,9 @@ export default function RowAndColumnSpacing() {
     console.log("GeneralContainer se ha montado");
   }, []);
 
-  const getDataCalendar = (childData) => {
-    setDataCalendar(childData)
-  }
+const getDataCalendar = (childData) => {
+  setDataCalendar(childData)
+ }
 
   return (
     <Box 

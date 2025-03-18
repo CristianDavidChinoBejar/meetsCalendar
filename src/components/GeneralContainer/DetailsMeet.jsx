@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
 function Details(){
@@ -7,7 +7,9 @@ function Details(){
         <div>
         <h2>Alan M Freyre </h2>
         <h2>Primera consulta</h2>
+        
         <h2>🕑 15 minutos</h2>
+        {/* <AccessTimeIcon></AccessTimeIcon> */}
         <h2>Odontologia</h2>
 
         <h1>Detalles</h1>
