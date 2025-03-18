@@ -13,7 +13,7 @@ export default function Calendar({getDataCalendar}) {
   const handleDateChange = ({$d}) => {
     getDataCalendar($d)
     // setValueDate($d)
-    console.log($d)
+    console.log($d) 
   }
 
   return (
