@@ -9,11 +9,19 @@ import { useEffect } from "react";
 import Details from './DetailsMeet';
 import './GeneralContainer.css'
 
+import { useEffect, useState } from "react";
+import ButtonSend from '../ButtonSend/ButtonSend';
 
 export default function RowAndColumnSpacing() {
+  const [dataCalendar, setDataCalendar] = useState("")
   useEffect(() => {
     console.log("GeneralContainer se ha montado");
   }, []);
+
+  const getDataCalendar = (childData) => {
+    setDataCalendar(childData)
+  }
+
   return (
     <Box 
       sx={{
