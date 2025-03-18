@@ -1,45 +1,70 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid2';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import ButtonTime from '../ButtonTime/ButtonTime'
 import Calendar from '../Calendar/Calendar'
 import {Texts} from '../Texts/Texts';
-import Login from '../Login/Login'
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  ...theme.applyStyles('dark', {
-    backgroundColor: '#1A2027',
-  }),
-}));
+import Login from '../Login/Login';
+import { useEffect, useState } from "react";
+import ButtonSend from '../ButtonSend/ButtonSend';
 
 export default function RowAndColumnSpacing() {
+  const [dataCalendar, setDataCalendar] = useState("")
+  useEffect(() => {
+    console.log("GeneralContainer se ha montado");
+  }, []);
+
+  const getDataCalendar = (childData) => {
+    setDataCalendar(childData)
+  }
+
   return (
-    <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid >
-          <Item>
-            <Login />
-          </Item>
-        </Grid>
-        <Grid size={6}>
-          <Item>
-            <Texts subtitle={'Seleccione una fecha y hora'} />
-            <Calendar />
-          </Item>
-        </Grid>
-        <Grid size={1}>
-          <Item>
-            <ButtonTime/>
-          </Item>
-        </Grid>
-      </Grid>
-    </Box>
+    <Box 
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          width: 1000,
+          height: "100%",
+          padding: 2,
+          position: "sticky",
+          top: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {/* <Login /> */}
+        <Login />
+        
+        <Texts subtitle={'Seleccione una fecha y hora'} />
+
+        <Calendar getDataCalendar={getDataCalendar}/>
+
+        {/* <ButtonSend /> */}
+
+      </Paper>
+      
+      <Paper
+        elevation={3}
+        sx={{
+          width: 200,
+          height: "100%", 
+          overflowY: "auto",
+          padding: 2,
+        }}
+      >
+        
+        <ButtonTime/>
+        
+      </Paper>
+      </Box>
   );
 }
