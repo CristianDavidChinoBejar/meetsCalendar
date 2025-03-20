@@ -10,6 +10,7 @@ import ButtonSend from '../ButtonSend/ButtonSend';
 
 export default function RowAndColumnSpacing() {
   const [dataCalendar, setDataCalendar] = useState("")
+  const [scheduleDates, setScheduleDates] = useState("")
   useEffect(() => {
     console.log("GeneralContainer se ha montado");
   }, []);
@@ -17,8 +18,14 @@ export default function RowAndColumnSpacing() {
   const getDataCalendar = (childData) => {
     setDataCalendar(childData)
   }
-  console.log(dataCalendar, 'dataaaa');
+  console.log(dataCalendar, 'data del calendario, sumar data del horario y del input del profesional');
   
+  const getScheduleDates = (scheduleDate) => {
+    setScheduleDates(scheduleDate)
+  }
+  
+  console.log(scheduleDates, ' data horariooo');
+
   return (
     <Box 
       sx={{
@@ -42,7 +49,6 @@ export default function RowAndColumnSpacing() {
           justifyContent: "center",
         }}
       >
-        {/* <Login /> */}
         <Login />
         
         <Texts subtitle={'Seleccione una fecha y hora'} />
@@ -63,7 +69,7 @@ export default function RowAndColumnSpacing() {
         }}
       >
         
-        <ButtonTime/>
+      <ButtonTime getScheduleDates={getScheduleDates} />
         
       </Paper>
       </Box>
