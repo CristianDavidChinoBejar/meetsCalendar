@@ -17,7 +17,8 @@ export default function RowAndColumnSpacing() {
   const getDataCalendar = (childData) => {
     setDataCalendar(childData)
   }
-
+  console.log(dataCalendar, 'dataaaa');
+  
   return (
     <Box 
       sx={{
@@ -48,7 +49,7 @@ export default function RowAndColumnSpacing() {
 
         <Calendar getDataCalendar={getDataCalendar}/>
 
-        {/* <ButtonSend /> */}
+        <ButtonSend />
 
       </Paper>
       
