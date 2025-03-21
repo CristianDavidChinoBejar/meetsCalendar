@@ -15,13 +15,11 @@ export default function BasicButtons(getScheduleDates) {
 
   // Manejar el clic en un botón específico
   const handleClick = (hora) => {
-    setBotonSeleccionado(botonSeleccionado === hora ? null : hora);
+    setBotonSeleccionado(botonSeleccionado === hora ? null : hora)
   };
   
-  const handleSchedule = () => {
-    getScheduleDates(botonSeleccionado)
-  }
-
+  console.log(botonSeleccionado, 'gagg');
+  // getScheduleDates(botonSeleccionado)
   return (
     <Stack spacing={2} direction="column">
       {horarios.map((hora) => (
@@ -29,7 +27,6 @@ export default function BasicButtons(getScheduleDates) {
           key={hora}
           onClick={() => handleClick(hora)}
           variant={botonSeleccionado === hora ? "contained" : "outlined"}
-          onChange={handleSchedule}
         >
           {hora}
         </Button>
