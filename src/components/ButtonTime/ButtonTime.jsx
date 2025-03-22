@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Stack } from "@mui/material";
 
-export default function BasicButtons(getScheduleDates) {
+export default function BasicButtons({getScheduleDates}) {
   const horarios = [
     "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00",
     "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00",
@@ -18,8 +18,8 @@ export default function BasicButtons(getScheduleDates) {
     setBotonSeleccionado(botonSeleccionado === hora ? null : hora)
   };
   
-  console.log(botonSeleccionado, 'gagg');
-  // getScheduleDates(botonSeleccionado)
+  getScheduleDates(botonSeleccionado)
+  
   return (
     <Stack spacing={2} direction="column">
       {horarios.map((hora) => (

@@ -18,13 +18,13 @@ export default function RowAndColumnSpacing() {
   const getDataCalendar = (childData) => {
     setDataCalendar(childData)
   }
-  console.log(dataCalendar, 'data del calendario, sumar data del horario y del input del profesional');
+  console.log(dataCalendar, 'data del calendario');
   
-  const getScheduleDates = (scheduleDate) => {
-    setScheduleDates(scheduleDate)
+  const getScheduleDates = (childScheduleDate) => {
+    setScheduleDates(childScheduleDate)
   }
   
-  console.log(scheduleDates, ' data horariooo');
+  console.log(scheduleDates, 'data horariooo');
 
   return (
     <Box 
