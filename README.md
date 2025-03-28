@@ -64,5 +64,55 @@ npm run dev
 http://localhost:5173/
 ```
 
+
 ---
 
+### For macOS users:
+
+- 1 Install Node & NPM:
+```
+brew install node
+```
+
+- 2 Install dependencies:
+```
+npm install
+```
+
+- 3 Run the app:
+```
+npm run dev
+```
+
+- 4 Open in browser:
+```
+http://localhost:5173/
+```
+
+---
+
+### For Windows users:
+
+- 1 Install Node & NPM:
+  - Download and install Node.js from [https://nodejs.org](https://nodejs.org)
+  - Ensure Node.js and npm are installed by running in Command Prompt (CMD):
+```
+node -v
+```
+```
+npm -v
+```
+
+- 2 Install dependencies:
+```
+npm install
+```
+
+- 3 Run the app:
+```
+npm run dev
+```
+
+- 4 Open in browser:
+```
+http://localhost:5173/
